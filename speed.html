@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>    // Function to calculate factorial
+    function calculateFactorial(number) {
+        if (number === 0 || number === 1) {
+            return 1;
+        } else {
+            let factorial = 1;
+            for (let i = 2; i <= number; i++) {
+                factorial *= i;
+            }
+            return factorial;
+        }
+    }
+    
+    // Function to generate diamond pattern
+    function generateDiamondPattern(rows) {
+        let diamondPattern = '';
+        let spaces, stars;
+    
+        // Upper half of the diamond
+        for (let i = 1; i <= rows; i++) {
+            spaces = ' '.repeat(rows - i);
+            stars = '*'.repeat(2 * i - 1);
+            diamondPattern += spaces + stars + '\n';
+        }
+    
+        // Lower half of the diamond (excluding the last row)
+        for (let i = rows - 1; i >= 1; i--) {
+            spaces = ' '.repeat(rows - i);
+            stars = '*'.repeat(2 * i - 1);
+            diamondPattern += spaces + stars + '\n';
+        }
+    
+        return diamondPattern;
+    }
+    
+    // Main function to execute the program
+    function main() {
+        const userInput = parseInt(prompt("Enter a positive integer for factorial calculation: "));
+        if (isNaN(userInput) || userInput < 0) {
+            console.log("Invalid input. Please enter a positive integer.");
+        } else {
+            const factorial = calculateFactorial(userInput);
+            console.log(`Factorial of ${userInput} is: ${factorial}`);
+            const diamondPatternRows = factorial; // Number of rows for the diamond pattern
+            const diamondPattern = generateDiamondPattern(diamondPatternRows);
+            console.log(`Diamond Pattern for factorial ${userInput}:\n`);
+            console.log(diamondPattern);
+        }
+    }
+    
+    // Call the main function to start the program
+    main();
+    
+    </script>
+</body>
+</html>

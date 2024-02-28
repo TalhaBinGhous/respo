@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printAlphabetsInOrder(alphabet1, alphabet2, alphabet3) {
+    const alphabets = [alphabet1, alphabet2, alphabet3];
+    
+    // Sort alphabets in ascending order
+    const ascendingOrder = alphabets.slice().sort();
+
+    // Sort alphabets in descending order
+    const descendingOrder = alphabets.slice().sort().reverse();
+
+    console.log("Alphabets in ascending order: " + ascendingOrder.join(', '));
+    console.log("Alphabets in descending order: " + descendingOrder.join(', '));
+}
+
+// Prompt user to enter three alphabets
+const alphabet1 = prompt("Enter the first alphabet: ").toUpperCase();
+const alphabet2 = prompt("Enter the second alphabet: ").toUpperCase();
+const alphabet3 = prompt("Enter the third alphabet: ").toUpperCase();
+
+// Check if inputs are valid alphabets
+if (alphabet1.length === 1 && alphabet2.length === 1 && alphabet3.length === 1 && 
+    alphabet1.match(/[A-Z]/i) && alphabet2.match(/[A-Z]/i) && alphabet3.match(/[A-Z]/i)) {
+    // Call function to print alphabets in order
+    printAlphabetsInOrder(alphabet1, alphabet2, alphabet3);
+} else {
+    console.log("Invalid input. Please enter single alphabets from A to Z.");
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to classify a word into different parts of speech
+function classifyWord(word) {
+    // List of words categorized by their parts of speech
+    const nouns = ["cat", "dog", "book", "table"];
+    const pronouns = ["I", "you", "he", "she", "it", "we", "they"];
+    const verbs = ["run", "eat", "sleep", "study", "play", "write"];
+    const conjunctions = ["and", "but", "or", "because", "although"];
+   
+    // Check if the word belongs to any of the categories
+    if (nouns.includes(word)) {
+        return "Noun";
+    } else if (pronouns.includes(word)) {
+        return "Pronoun";
+    
+    } else if (verbs.includes(word)) {
+        return "Verb";
+    } else if (conjunctions.includes(word)) {
+        return "Conjunction";
+    }else {
+        return "Unknown";
+    }
+}
+
+// Function to prompt user for input and classify the word
+function classifyUserInput() {
+    const userInput = prompt("Enter a word to classify its part of speech:").toLowerCase();
+    const partOfSpeech = classifyWord(userInput);
+    if (partOfSpeech !== "Unknown") {
+        console.log(`"${userInput}" is a ${partOfSpeech}.`);
+    } else {
+        console.log(`"${userInput}" is not recognized as a part of speech.`);
+    }
+}
+
+// Call the function to classify user input
+classifyUserInput();
+
+    </script>
+</body>
+</html>
